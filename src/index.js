@@ -1,16 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
-
-//Functional Component
-// const App = () => {
-// 	window.navigator.geolocation.getCurrentPosition(
-// 		(position) => console.log(position), // success callback
-// 		(err) => console.log(err) // error callback
-// 	);
-
-// 	return <div>Latitude: </div>;
-// };
+import Spinner from './Spinner';
 
 // Class Based Component
 class App extends React.Component {
@@ -32,7 +23,7 @@ class App extends React.Component {
 			return <SeasonDisplay lat={this.state.lat} />; // passing state as a prop
 		}
 
-		return <div>Loading ...</div>;
+		return <Spinner message='Please accept location request' />;
 	}
 }
 
